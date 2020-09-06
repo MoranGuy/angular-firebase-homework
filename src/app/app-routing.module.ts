@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AlbumsComponent } from './pages/albums/albums.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/albums',
-    pathMatch: 'prefix'
-  },
-  {
-    path: '**',
-    component: AlbumsComponent
+    redirectTo: 'albums',
+    pathMatch: 'full'
   },
   {
     path: 'albums',
