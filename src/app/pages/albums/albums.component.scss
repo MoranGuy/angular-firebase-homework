@@ -1,0 +1,31 @@
+.material-icons {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.button-span {
+  font-size: 18px;
+}
+
+.example-icon {
+  margin-right: 10px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  margin: 0 auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid black;
+}

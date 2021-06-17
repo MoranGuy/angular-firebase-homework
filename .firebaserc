@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-homework-firebase": {
+      "hosting": {
+        "angular-service-training": [
+          "angular-homework-firebase"
+        ]
+      }
+    }
+  }
+}

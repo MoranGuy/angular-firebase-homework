@@ -1,0 +1,66 @@
+<h2 mat-dialog-title>Add New Album</h2>
+<mat-dialog-content>
+  <form [formGroup]="newAlbumForm">
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Album name</mat-label>
+        <input formControlName="name" matInput placeholder="Placeholder" />
+        <mat-error
+          *ngIf="newAlbumForm.get('name')?.errors && (newAlbumForm.get('name')?.dirty || newAlbumForm.get('name')?.touched)"
+          >You must enter the name</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Band name</mat-label>
+        <input formControlName="band" matInput placeholder="Placeholder" />
+        <mat-error
+          *ngIf="newAlbumForm.get('band')?.errors && (newAlbumForm.get('band')?.dirty || newAlbumForm.get('band')?.touched)"
+          >You must enter the band</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Genre</mat-label>
+        <input formControlName="genre" matInput placeholder="Placeholder" />
+        <mat-error
+          *ngIf="newAlbumForm.get('genre')?.errors && (newAlbumForm.get('genre')?.dirty || newAlbumForm.get('genre')?.touched)"
+          >You must enter genre(s)</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Label</mat-label>
+        <input formControlName="label" matInput placeholder="Placeholder" />
+        <mat-error
+          *ngIf="newAlbumForm.get('label')?.errors && (newAlbumForm.get('label')?.dirty || newAlbumForm.get('label')?.touched)"
+          >You must enter label(s)</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Producer</mat-label>
+        <input formControlName="producer" matInput placeholder="Placeholder" />
+        <mat-error
+          *ngIf="newAlbumForm.get('producer')?.errors && (newAlbumForm.get('producer')?.dirty || newAlbumForm.get('producer')?.touched)"
+          >You must enter producer(s)</mat-error
+        >
+      </mat-form-field>
+    </p>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    mat-button
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+    (click)="onAdd()"
+  >
+    Add
+  </button>
+</mat-dialog-actions>

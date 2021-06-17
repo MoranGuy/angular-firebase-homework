@@ -1,0 +1,91 @@
+<h2 mat-dialog-title>Edit Album</h2>
+<mat-dialog-content>
+  <form [formGroup]="editAlbumForm">
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>{{data.name}}</mat-label>
+        <input
+          formControlName="name"
+          matInput
+          [(ngModel)]="data.name"
+          [placeholder]="data.name"
+        />
+        <mat-error
+          *ngIf="editAlbumForm.get('name')?.errors && (editAlbumForm.get('name')?.dirty || editAlbumForm.get('name')?.touched)"
+          >You must enter the name</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>{{data.band}}</mat-label>
+        <input
+          formControlName="band"
+          matInput
+          [(ngModel)]="data.band"
+          [placeholder]="data.band"
+        />
+        <mat-error
+          *ngIf="editAlbumForm.get('band')?.errors && (editAlbumForm.get('band')?.dirty || editAlbumForm.get('band')?.touched)"
+          >You must enter the band</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>{{data.genre}}</mat-label>
+        <input
+          formControlName="genre"
+          matInput
+          [(ngModel)]="data.genre"
+          [placeholder]="data.genre"
+        />
+        <mat-error
+          *ngIf="editAlbumForm.get('genre')?.errors && (editAlbumForm.get('genre')?.dirty || editAlbumForm.get('genre')?.touched)"
+          >You must enter genre(s)</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>{{data.label}}</mat-label>
+        <input
+          formControlName="label"
+          matInput
+          [(ngModel)]="data.label"
+          [placeholder]="data.label"
+        />
+        <mat-error
+          *ngIf="editAlbumForm.get('label')?.errors && (editAlbumForm.get('label')?.dirty || editAlbumForm.get('label')?.touched)"
+          >You must enter label(s)</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>{{data.producer}}</mat-label>
+        <input
+          formControlName="producer"
+          matInput
+          [(ngModel)]="data.producer"
+          [placeholder]="data.producer"
+        />
+        <mat-error
+          *ngIf="editAlbumForm.get('producer')?.errors && (editAlbumForm.get('producer')?.dirty || editAlbumForm.get('producer')?.touched)"
+          >You must enter producer(s)</mat-error
+        >
+      </mat-form-field>
+    </p>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    mat-button
+    [mat-dialog-close]="true"
+    (click)="onEdit(data.id)"
+    cdkFocusInitial
+  >
+    Edit
+  </button>
+</mat-dialog-actions>
